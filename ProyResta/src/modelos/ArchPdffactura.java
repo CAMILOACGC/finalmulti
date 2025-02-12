@@ -24,16 +24,16 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @web http://jc-mouse.blogspot.com/
  * @author Mouse
  */
-public class ArchPdf {
+public class ArchPdffactura {
 
     private File ruta_destino;
 
-    public ArchPdf(){
+    public ArchPdffactura(){
         ruta_destino=null;
     }
 
     /* metodo que hace uso de la clase itext para manipular archivos PDF*/
-    public void crear_PDF(Reporte objP){
+    public void crear_PDF(Factura objf){
         //abre ventana de dialogo "guardar"
         Colocar_Destino();
         //si destino es diferente de null
@@ -49,7 +49,7 @@ public class ArchPdf {
                 mipdf.addSubject(s); //se añade el asunto del documento
                 mipdf.addKeywords(k); //Se agregan palabras claves*/
                 mipdf.add(new Paragraph("DATOS DEL PRODUCTO\n"));
-                mipdf.add(new Paragraph(objP.toString()));
+                mipdf.add(new Paragraph(objf.toString()));
                 // se añade el contendio del PDF
                 mipdf.close(); //se cierra el PDF&
                 JOptionPane.showMessageDialog(null,"Documento PDF creado");

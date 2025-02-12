@@ -18,11 +18,14 @@ import modelos.*;
 public class ControladorPrincipal implements ActionListener {
 
     private MDIPrincipal principal;
+    private Reporte objp;
+    private Factura objf;
 
 
     public ControladorPrincipal() {
         this.principal = new MDIPrincipal();
-        
+        this.objp=objp;
+        this.objf=objf;
 
         // Registra los botones en el menú
         this.principal.getBtnventas().addActionListener(this);
@@ -32,6 +35,8 @@ public class ControladorPrincipal implements ActionListener {
         this.principal.getMnmitecajero().addActionListener(this);
         this.principal.getMnmRegistrarplato().addActionListener(this);
         this.principal.getMnmmostrarfactura().addActionListener(this);
+         this.principal.getCobrar().addActionListener(this);
+         this.principal.getMnmmostrarfactura().addActionListener(this);
     }
  
     public void iniciar() {
@@ -43,6 +48,16 @@ public class ControladorPrincipal implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource().equals(principal.getCobrar()))
+        {
+            ArchPdf pdf=new ArchPdf();
+            pdf.crear_PDF(objp);
+        }
+         if(e.getSource().equals(principal.getMnmmostrarfactura()))
+        {
+            ArchPdffactura pdf=new ArchPdffactura();
+            pdf.crear_PDF(objf);
+        }
         System.out.println("Botón presionado en ControladorPrincipal"); // Depuración
 
         if (e.getSource().equals(principal.getMnmRepoteempleados())) {
@@ -94,6 +109,7 @@ public class ControladorPrincipal implements ActionListener {
            controlmesero controlmese = new controlmesero();// Asegura que la ventana se muestre
            controlmese.iniciar();
         }
+         
     }
 }
 
