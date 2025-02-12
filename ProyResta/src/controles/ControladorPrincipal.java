@@ -37,7 +37,6 @@ public class ControladorPrincipal implements ActionListener {
         this.principal.getMnmmostrarfactura().addActionListener(this);
         this.principal.getMnmhacerpedido().addActionListener(this);
         this.principal.getCobrar().addActionListener(this);
-        this.principal.getMnmmostrarfactura().addActionListener(this);
     }
  
     public void iniciar() {
