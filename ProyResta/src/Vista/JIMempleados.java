@@ -5,8 +5,6 @@
 package Vista;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 

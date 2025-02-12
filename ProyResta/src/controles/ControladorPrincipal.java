@@ -5,7 +5,9 @@
 package controles;
 
 import Controles.ControladorEmpleados;
+import Controles.ControladorRegisPlato;
 import Vista.JIMempleados;
+import Vista.JIRegisplato;
 import Vista.MDIPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,6 +55,16 @@ public class ControladorPrincipal implements ActionListener {
 
             ControladorEmpleados controlempl = new ControladorEmpleados(empleados);
             controlempl.iniciar();
+        }
+           if (e.getSource().equals(principal.getMnmRegistrarplato())) {
+            System.out.println("Abriendo ventana de empleados..."); // Depuración
+
+               JIRegisplato platos = new JIRegisplato();
+            principal.getPanelventanas().add(platos);
+            platos.setVisible(true); // Asegura que la ventana se muestre
+
+            ControladorRegisPlato controlplato = new ControladorRegisPlato();
+            controlplato.iniciar();
         }
     }
 }
