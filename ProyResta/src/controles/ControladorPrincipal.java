@@ -88,7 +88,7 @@ public class ControladorPrincipal implements ActionListener {
             JIMeseros meseros = new JIMeseros();
             principal.getPanelventanas().add(meseros);
             meseros.setVisible(true);
-           ControladorMeseros controlmese = new ControladorMeseros();// Asegura que la ventana se muestre
+           ControladorMeseros controlmese = new ControladorMeseros(meseros);// Asegura que la ventana se muestre
            controlmese.iniciar();
         }
          

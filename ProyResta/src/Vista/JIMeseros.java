@@ -135,7 +135,7 @@ public class JIMeseros extends javax.swing.JInternalFrame {
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel32.setText("Email");
-        jPanel11.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanel11.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 40, -1));
 
         txttel.setBackground(new java.awt.Color(204, 204, 204));
         jPanel11.add(txttel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 140, -1));
@@ -154,9 +154,17 @@ public class JIMeseros extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "NOMBRE", "PRECIO"
+                "ID", "NOMBRE", "PEDIDO", "CEDULA", "EMAIL", "TELEFONO", "PRECIO"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         TablePedido.setRowHeight(23);
         TablePedido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
