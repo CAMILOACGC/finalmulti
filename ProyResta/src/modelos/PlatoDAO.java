@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelos.Conexion;
 
 public class platoDAO {
     private PlatoP objPlato;
@@ -119,6 +120,8 @@ public class platoDAO {
         return mensaje;
     }
 
+    
+    
     public List<PlatoP> listarTodo() {
     List<PlatoP> lista = new ArrayList<>();
     Conexion conexion = new Conexion();

@@ -76,9 +76,10 @@ public class ControladorPrincipal implements ActionListener {
             JIRegisplato platos = new JIRegisplato();
             principal.getPanelventanas().add(platos);
             platos.setVisible(true); // Asegura que la ventana se muestre
-
+       
             ControladorRegisPlato controlplato = new ControladorRegisPlato(platos);
             controlplato.iniciar();
+            
         }
 
          if (e.getSource().equals(principal.getMnmhacerpedido()) || e.getSource().equals(principal.getBtnventas())) {
@@ -87,7 +88,7 @@ public class ControladorPrincipal implements ActionListener {
             JIMeseros meseros = new JIMeseros();
             principal.getPanelventanas().add(meseros);
             meseros.setVisible(true);
-           controlmesero controlmese = new controlmesero();// Asegura que la ventana se muestre
+           ControladorMeseros controlmese = new ControladorMeseros();// Asegura que la ventana se muestre
            controlmese.iniciar();
         }
          

@@ -14,15 +14,15 @@ import modelos.PlatoP;
  *
  * @author Estudiante
  */
-public class controlmesero  implements ActionListener{
+public class ControladorMeseros implements ActionListener{
     private JIMeseros fmrp;
     private PlatoP  plato;
 
-    public controlmesero(JIMeseros fmrp, PlatoP plato) {
+    public ControladorMeseros (JIMeseros fmrp, PlatoP plato) {
         this.fmrp = fmrp;
         this.plato = plato;
     }
-    public controlmesero() {
+    public ControladorMeseros() {
         this.fmrp = new JIMeseros();
         this.plato = new PlatoP() {
         };
