@@ -33,7 +33,6 @@ public class ControladorPrincipal implements ActionListener {
         this.principal.getMnmRepoteempleados().addActionListener(this);
         this.principal.getMnmiteadministrador().addActionListener(this);
         this.principal.getMnmitecajero().addActionListener(this);
-        this.principal.getMnmRegistrarplato().addActionListener(this);
         this.principal.getMnmmostrarfactura().addActionListener(this);
         this.principal.getMnmhacerpedido().addActionListener(this);
         this.principal.getCobrar().addActionListener(this);
@@ -78,7 +77,7 @@ public class ControladorPrincipal implements ActionListener {
             principal.getPanelventanas().add(platos);
             platos.setVisible(true); // Asegura que la ventana se muestre
 
-            ControladorRegisPlato controlplato = new ControladorRegisPlato();
+            ControladorRegisPlato controlplato = new ControladorRegisPlato(platos);
             controlplato.iniciar();
         }
 

@@ -74,11 +74,16 @@ public class PlatoP extends Producto {
 
     @Override
     public String toString() {
-        return "Plato principal" 
-                + "para " + CAN +"Personas"
-                + "con proteina" + PRO + 
-                "Acompañate es " + ACOM 
-                + "GASEOSA=" + GASEOSA ;
+        String mensaje = "Plato principal para " + CAN +
+                " Personas, tiene de proteina " + PRO + 
+                ", y de Acompañate es " + ACOM;
+        if (GASEOSA.equals("si")){
+            mensaje += " Con ";
+        }else {
+            mensaje += " Sin ";
+        }
+        mensaje += " BEBIDA.";
+        return mensaje;
     }
     
     

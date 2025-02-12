@@ -216,9 +216,17 @@ public class JIRegisplato extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "NOMBRE", "PRECIO"
+                "ID", "NOMBRE", "PRECIO", "PROTEINA", "CANTIDAD_PERSONAS", "ACOMPAÑAMIENTO", "BEBIDA"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         TablePlatos.setRowHeight(23);
         TablePlatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -237,15 +245,15 @@ public class JIRegisplato extends javax.swing.JInternalFrame {
                 .addContainerGap(501, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(294, 294, 294)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+                    .addContainerGap(303, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createSequentialGroup()
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
                     .addContainerGap()))
         );
@@ -334,13 +342,14 @@ public class JIRegisplato extends javax.swing.JInternalFrame {
         this.jSbebida = jSbebida;
     }
 
-    public JTextField getTxtAcompañamiento2() {
-        return txtPRECIO;
+    public JTextField getTxtAcompañamiento1() {
+        return txtAcompañamiento1;
     }
 
-    public void setTxtAcompañamiento2(JTextField txtAcompañamiento2) {
-        this.txtPRECIO = txtAcompañamiento2;
+    public void setTxtAcompañamiento1(JTextField txtAcompañamiento1) {
+        this.txtAcompañamiento1 = txtAcompañamiento1;
     }
+
 
     public JTextField getTxtCantidaddepersonas() {
         return txtCantidaddepersonas;

@@ -84,7 +84,6 @@ public class platoDAO {
             Conexion conexion = new Conexion();
             PreparedStatement consulta;
             conexion.conectar();
-            JOptionPane.showMessageDialog(null, objPlato.toString());
             String instruccion = "UPDATE platos SET nombre = ?, precio = ?, proteina = ?, cantidad_personas = ?, acompanamiento = ?, bebida = ? WHERE id = ?";
             consulta = conexion.getConexion().prepareStatement(instruccion);
             consulta.setString(1, objPlato.getNOM());
@@ -107,7 +106,6 @@ public class platoDAO {
             Conexion conexion = new Conexion();
             PreparedStatement consulta;
             conexion.conectar();
-            JOptionPane.showMessageDialog(null, objPlato.toString());
             String comando = "DELETE FROM platos WHERE id = ?";
             consulta = conexion.getConexion().prepareStatement(comando);
             consulta.setString(1, objPlato.getID());

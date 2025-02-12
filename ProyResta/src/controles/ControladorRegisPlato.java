@@ -17,8 +17,8 @@ public class ControladorRegisPlato implements ActionListener {
     private platoDAO dao;
     private DefaultTableModel modelo;
 
-    public ControladorRegisPlato() {
-        this.vista = new JIRegisplato();
+    public ControladorRegisPlato(JIRegisplato platos ) {
+        this.vista = platos;
         this.plato = new PlatoP();
         this.dao = new platoDAO();
         this.modelo = (DefaultTableModel) vista.getTablePlatos().getModel();
@@ -37,6 +37,7 @@ public class ControladorRegisPlato implements ActionListener {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int fila = vista.getTablePlatos().getSelectedRow();
+                System.out.println(fila);
                 if (fila >= 0) {
                     mostrarDatosEnFormulario(fila);
                 }
@@ -63,7 +64,7 @@ public class ControladorRegisPlato implements ActionListener {
         vista.getTxtPRECIO().setText(modelo.getValueAt(fila, 2).toString());
         vista.getTxtProteina().setText(modelo.getValueAt(fila, 3).toString());
         vista.getTxtCantidaddepersonas().setText(modelo.getValueAt(fila, 4).toString());
-        vista.getTxtAcompañamiento2().setText(modelo.getValueAt(fila, 5).toString());
+        vista.getTxtAcompañamiento1().setText(modelo.getValueAt(fila, 5).toString());
         vista.getjSbebida().setValue(modelo.getValueAt(fila, 6));
     }
 
@@ -73,8 +74,7 @@ public class ControladorRegisPlato implements ActionListener {
         vista.getTxtPRECIO().setText("");
         vista.getTxtProteina().setText("");
         vista.getTxtCantidaddepersonas().setText("");
-        vista.getTxtAcompañamiento2().setText("");
-        vista.getjSbebida().setValue("");
+        vista.getTxtAcompañamiento1().setText("");
     }
 
     private void cargarDatosPlato() {
@@ -83,7 +83,7 @@ public class ControladorRegisPlato implements ActionListener {
         plato.setPREC(Double.parseDouble(vista.getTxtPRECIO().getText()));
         plato.setPRO(vista.getTxtProteina().getText());
         plato.setCAN(vista.getTxtCantidaddepersonas().getText());
-        plato.setACOM(vista.getTxtAcompañamiento2().getText());
+        plato.setACOM(vista.getTxtAcompañamiento1().getText());
         plato.setGASEOSA(vista.getjSbebida().getValue().toString());
     }
 
