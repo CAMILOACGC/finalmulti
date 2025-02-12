@@ -7,6 +7,7 @@ package controles;
 import Controles.ControladorEmpleados;
 import Controles.ControladorRegisPlato;
 import Vista.JIMempleados;
+import Vista.JIMeseros;
 import Vista.JIRegisplato;
 import Vista.MDIPrincipal;
 import java.awt.event.ActionEvent;
@@ -56,35 +57,27 @@ public class ControladorPrincipal implements ActionListener {
             ControladorEmpleados controlempl = new ControladorEmpleados(empleados);
             controlempl.iniciar();
         }
-           if (e.getSource().equals(principal.getMnmRegistrarplato())) {
-            System.out.println("Abriendo ventana de empleados..."); // Depuración
 
-               JIRegisplato platos = new JIRegisplato();
+        if (e.getSource().equals(principal.getMnmRegistrarplato())) {
+            System.out.println("Abriendo ventana de plato..."); // Depuración
+
+            JIRegisplato platos = new JIRegisplato();
             principal.getPanelventanas().add(platos);
             platos.setVisible(true); // Asegura que la ventana se muestre
 
             ControladorRegisPlato controlplato = new ControladorRegisPlato();
             controlplato.iniciar();
         }
-             if (e.getSource().equals(principal.getMnmRegistrarplato())) {
-            System.out.println("Abriendo ventana de plato."); // Depuración
 
-               JIRegisplato platos = new JIRegisplato();
-            principal.getPanelventanas().add(platos);
-            platos.setVisible(true); // Asegura que la ventana se muestre
+        if (e.getSource().equals(principal.getMnmitemesero()) || e.getSource().equals(principal.getBtnventas())) {
+            System.out.println("Abriendo ventana de meseros..."); // Depuración
 
-            ControladorRegisPlato controlplato = new ControladorRegisPlato();
-            controlplato.iniciar();
-        }
-              if (e.getSource().equals(principal.getMnmRegistrarplato())) {
-            System.out.println("Abriendo ventana de plato."); // Depuración
-
-               JIRegisplato platos = new JIRegisplato();
-            principal.getPanelventanas().add(platos);
-            platos.setVisible(true); // Asegura que la ventana se muestre
-
-            ControladorRegisPlato controlplato = new ControladorRegisPlato();
-            controlplato.iniciar();
+            JIMeseros meseros = new JIMeseros();
+            principal.getPanelventanas().add(meseros);
+            meseros.setVisible(true);
+           controlmesero controlmese = new controlmesero();// Asegura que la ventana se muestre
+           controlmese.iniciar();
         }
     }
 }
+

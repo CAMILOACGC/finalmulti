@@ -41,7 +41,7 @@ public class ControladorRegisPlato implements ActionListener {
         vista.getTxtProteina().setText("");
         vista.getTxtCantidaddepersonas().setText("");
         vista.getTxtAcompañamiento2().setText("");
-        vista.getjSbebida().setValue("no");
+        vista.getjSbebida().setValue("");
     }
 
     private void cargarDatosPlato() {

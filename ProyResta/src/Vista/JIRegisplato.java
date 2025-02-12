@@ -56,6 +56,8 @@ public class JIRegisplato extends javax.swing.JInternalFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         TablePlatos = new javax.swing.JTable();
 
+        setClosable(true);
+
         jPanel11.setBackground(new java.awt.Color(204, 204, 204));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -35,11 +35,9 @@ public class JIempleados extends javax.swing.JInternalFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
         txtHoras = new javax.swing.JLabel();
         txtCodempleados = new javax.swing.JLabel();
         txtcedulaemple = new javax.swing.JLabel();
-        txtIDemple = new javax.swing.JLabel();
         txtNombrepersonaemple = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         txttelemple = new javax.swing.JLabel();
@@ -53,6 +51,8 @@ public class JIempleados extends javax.swing.JInternalFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaEmplados = new javax.swing.JTable();
 
+        setClosable(true);
+
         jLabel26.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel26.setText("Horas Trabajadas ");
 
@@ -65,16 +65,11 @@ public class JIempleados extends javax.swing.JInternalFrame {
         jLabel31.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel31.setText("Cedula");
 
-        jLabel32.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel32.setText("Email");
-
         txtHoras.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         txtCodempleados.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         txtcedulaemple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        txtIDemple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         txtNombrepersonaemple.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -162,10 +157,6 @@ public class JIempleados extends javax.swing.JInternalFrame {
                                         .addGap(19, 19, 19)
                                         .addComponent(txtcedulaemple, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel32)
-                                        .addGap(19, 19, 19)
-                                        .addComponent(txtIDemple, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel28)
                                         .addGap(7, 7, 7)
                                         .addComponent(txttelemple, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,11 +196,7 @@ public class JIempleados extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel31)
                     .addComponent(txtcedulaemple, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel32)
-                    .addComponent(txtIDemple, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
                     .addComponent(txttelemple, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -225,7 +212,7 @@ public class JIempleados extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
                     .addComponent(txtHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnGuardarEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnactualizarem, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -315,13 +302,7 @@ public class JIempleados extends javax.swing.JInternalFrame {
         this.txtHoras = txtHoras;
     }
 
-    public JLabel getTxtIDemple() {
-        return txtIDemple;
-    }
 
-    public void setTxtIDemple(JLabel txtIDemple) {
-        this.txtIDemple = txtIDemple;
-    }
 
     public JLabel getTxtNombrepersonaemple() {
         return txtNombrepersonaemple;
@@ -369,13 +350,11 @@ public class JIempleados extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel txtCodempleados;
     private javax.swing.JLabel txtDirecemple;
     private javax.swing.JLabel txtHoras;
-    private javax.swing.JLabel txtIDemple;
     private javax.swing.JLabel txtNombrepersonaemple;
     private javax.swing.JLabel txtSalario1;
     private javax.swing.JLabel txtcedulaemple;
