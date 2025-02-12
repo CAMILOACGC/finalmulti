@@ -27,7 +27,7 @@ public class ControladorEmpleados implements ActionListener {
         frmE.setTitle("Gestión de Empleados");
         frmE.setLocation(10, 30);
         frmE.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frmE.getBtnGuardarEmpleado().addActionListener(this);
+        frmE.getBtnGuardarEmpleado1().addActionListener(this);
         frmE.getBtndespedido().addActionListener(this);
         frmE.getBtnactualizarem().addActionListener(this);
 
@@ -70,7 +70,7 @@ public class ControladorEmpleados implements ActionListener {
         frmE.getTxtNombrepersonaemple().setText(modelo.getValueAt(fila, 1).toString());
         frmE.getTxtCodempleados2().setText(modelo.getValueAt(fila, 2).toString());
         frmE.getTxttelemple1().setText(modelo.getValueAt(fila, 3).toString());
-        frmE.getTxttelemple1().setText(modelo.getValueAt(fila, 4).toString());
+        frmE.getTxtDirecemple1().setText(modelo.getValueAt(fila, 4).toString());
         frmE.getTxtSalario2().setText(modelo.getValueAt(fila, 5).toString());
         frmE.getTxtHoras().setText(modelo.getValueAt(fila, 6).toString());
     }
@@ -87,7 +87,7 @@ public class ControladorEmpleados implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == frmE.getBtnGuardarEmpleado()) {
+        if (e.getSource() == frmE.getBtnGuardarEmpleado1()) {
             guardarEmpleado();
         } else if (e.getSource() == frmE.getBtndespedido()) {
             eliminarEmpleado();

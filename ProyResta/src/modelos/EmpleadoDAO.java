@@ -114,14 +114,13 @@ public class EmpleadoDAO {
             
             String instruccion = "UPDATE empleados SET nombre=?, codigo=?, telefono=?, direccion=?, salario=?, horas_trabajadas=? WHERE cedula=?";
             consulta = conexion.getConexion().prepareStatement(instruccion);
-          consulta.setString(1, objE.getID());
-            consulta.setString(2, objE.getNOM());
-            consulta.setString(3, objE.getCOD());
-        
-            consulta.setString(4, objE.getTEL());
-            consulta.setString(5, objE.getDIC());
-            consulta.setDouble(6, objE.getSAL());
-            consulta.setInt(7, objE.getHOR());
+            consulta.setString(1, objE.getNOM());
+            consulta.setString(2, objE.getCOD());
+            consulta.setString(3, objE.getTEL());
+            consulta.setString(4, objE.getDIC());
+            consulta.setDouble(5, objE.getSAL());
+            consulta.setInt(6, objE.getHOR());
+            consulta.setString(7, objE.getID());
             
             consulta.execute();
             mensaje = "Actualización de empleado exitosa...";
