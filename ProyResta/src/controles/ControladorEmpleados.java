@@ -136,7 +136,7 @@ public class ControladorEmpleados implements ActionListener {
             cargarTabla();
             limpiarFormulario();
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(frmE, "Error en los datos numéricos. Verifique salario y horas trabajadas.");
+            JOptionPane.showMessageDialog(frmE, "Error en los datos numéricos.");
         }
     }
 

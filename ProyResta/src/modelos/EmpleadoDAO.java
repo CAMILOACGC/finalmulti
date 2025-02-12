@@ -107,31 +107,32 @@ public class EmpleadoDAO {
     }
 
     public String actualizar() {
-        try {
-            Conexion conexion = new Conexion();
-            PreparedStatement consulta = null;
-            conexion.conectar();
-            
-            String instruccion = "UPDATE empleados SET nombre=?, codigo=?, telefono=?, direccion=?, salario=?, horas_trabajadas=? WHERE cedula=?";
-            consulta = conexion.getConexion().prepareStatement(instruccion);
-          consulta.setString(1, objE.getID());
-            consulta.setString(2, objE.getNOM());
-            consulta.setString(3, objE.getCOD());
+    try {
+        Conexion conexion = new Conexion();
+        PreparedStatement consulta = null;
+        conexion.conectar();
         
-            consulta.setString(4, objE.getTEL());
-            consulta.setString(5, objE.getDIC());
-            consulta.setDouble(6, objE.getSAL());
-            consulta.setInt(7, objE.getHOR());
-            
-            consulta.execute();
-            mensaje = "Actualización de empleado exitosa...";
-            consulta.close();
-            conexion.getConexion().close();
-        } catch (SQLException ex) {
-            mensaje = "Error al intentar actualizar empleado...\n" + ex;
-        }
-        return mensaje;
+        String instruccion = "UPDATE empleados SET nombre=?, codigo=?, telefono=?, direccion=?, salario=?, horas_trabajadas=? WHERE cedula=?";
+        consulta = conexion.getConexion().prepareStatement(instruccion);
+        
+        // Corregimos el orden de los parámetros para que coincidan con el SET de la consulta
+        consulta.setString(1, objE.getNOM());      // nombre
+        consulta.setString(2, objE.getCOD());      // codigo
+        consulta.setString(3, objE.getTEL());      // telefono
+        consulta.setString(4, objE.getDIC());      // direccion
+        consulta.setDouble(5, objE.getSAL());      // salario
+        consulta.setInt(6, objE.getHOR());         // horas_trabajadas
+        consulta.setString(7, objE.getID());       // cedula para el WHERE
+        
+        consulta.execute();
+        mensaje = "Actualización de empleado exitosa...";
+        consulta.close();
+        conexion.getConexion().close();
+    } catch (SQLException ex) {
+        mensaje = "Error al intentar actualizar empleado...\n" + ex;
     }
+    return mensaje;
+}
 
     public String eliminar(String cedula) {
         try {
