@@ -178,10 +178,6 @@ public class MDIPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mnmhacerpedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnmhacerpedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnmhacerpedidoActionPerformed
-
     private void mnmmostrarfacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnmmostrarfacturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mnmmostrarfacturaActionPerformed
@@ -189,6 +185,10 @@ public class MDIPrincipal extends javax.swing.JFrame {
     private void mnmRepoteempleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnmRepoteempleadosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mnmRepoteempleadosActionPerformed
+
+    private void mnmhacerpedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnmhacerpedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnmhacerpedidoActionPerformed
 
     public JButton getBtnventas() {
         return btnventas;

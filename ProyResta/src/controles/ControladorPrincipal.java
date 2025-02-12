@@ -35,8 +35,9 @@ public class ControladorPrincipal implements ActionListener {
         this.principal.getMnmitecajero().addActionListener(this);
         this.principal.getMnmRegistrarplato().addActionListener(this);
         this.principal.getMnmmostrarfactura().addActionListener(this);
-         this.principal.getCobrar().addActionListener(this);
-         this.principal.getMnmmostrarfactura().addActionListener(this);
+        this.principal.getMnmhacerpedido().addActionListener(this);
+        this.principal.getCobrar().addActionListener(this);
+        this.principal.getMnmmostrarfactura().addActionListener(this);
     }
  
     public void iniciar() {
@@ -82,24 +83,6 @@ public class ControladorPrincipal implements ActionListener {
             controlplato.iniciar();
         }
 
-        if (e.getSource().equals(principal.getBtnventas())) {
-            System.out.println("Abriendo ventana de meseros..."); // Depuración
-
-            JIMeseros meseros = new JIMeseros();
-            principal.getPanelventanas().add(meseros);
-            meseros.setVisible(true);
-           controlmesero controlmese = new controlmesero();// Asegura que la ventana se muestre
-           controlmese.iniciar();
-        }
-         if (e.getSource().equals(principal.getMnmhacerpedido())) {
-            System.out.println("Abriendo ventana de meseros..."); // Depuración
-
-            JIMeseros meseros = new JIMeseros();
-            principal.getPanelventanas().add(meseros);
-            meseros.setVisible(true);
-           controlmesero controlmese = new controlmesero();// Asegura que la ventana se muestre
-           controlmese.iniciar();
-        }
          if (e.getSource().equals(principal.getMnmhacerpedido()) || e.getSource().equals(principal.getBtnventas())) {
             System.out.println("Abriendo ventana de meseros..."); // Depuración
 
