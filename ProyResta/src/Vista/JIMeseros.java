@@ -6,6 +6,7 @@ package Vista;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -45,10 +46,10 @@ public class JIMeseros extends javax.swing.JInternalFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        txttel = new javax.swing.JLabel();
-        txtNombrepersona = new javax.swing.JLabel();
-        txtcedula = new javax.swing.JLabel();
-        txtID = new javax.swing.JLabel();
+        txttel = new javax.swing.JTextField();
+        txtNombrepersona1 = new javax.swing.JTextField();
+        txtcedula1 = new javax.swing.JTextField();
+        txtEMAIL1 = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         TablePedido = new javax.swing.JTable();
 
@@ -136,17 +137,17 @@ public class JIMeseros extends javax.swing.JInternalFrame {
         jLabel32.setText("Email");
         jPanel11.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
-        txttel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel11.add(txttel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 110, 20));
+        txttel.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel11.add(txttel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 140, -1));
 
-        txtNombrepersona.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel11.add(txtNombrepersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 110, 20));
+        txtNombrepersona1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel11.add(txtNombrepersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 140, -1));
 
-        txtcedula.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel11.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 110, 20));
+        txtcedula1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel11.add(txtcedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 140, -1));
 
-        txtID.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel11.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 110, 20));
+        txtEMAIL1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel11.add(txtEMAIL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 140, -1));
 
         TablePedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,28 +227,12 @@ public class JIMeseros extends javax.swing.JInternalFrame {
         this.btnGuardarpedido = btnGuardarpedido;
     }
 
-    public JLabel getTxtNombrepersona() {
-        return txtNombrepersona;
+    public JPanel getjPanel31() {
+        return jPanel31;
     }
 
-    public void setTxtNombrepersona(JLabel txtNombrepersona) {
-        this.txtNombrepersona = txtNombrepersona;
-    }
-
-    public JLabel getTxtcedula() {
-        return txtcedula;
-    }
-
-    public void setTxtcedula(JLabel txtcedula) {
-        this.txtcedula = txtcedula;
-    }
-
-    public JLabel getTxttel() {
-        return txttel;
-    }
-
-    public void setTxttel(JLabel txttel) {
-        this.txttel = txttel;
+    public void setjPanel31(JPanel jPanel31) {
+        this.jPanel31 = jPanel31;
     }
 
     public JSpinner getjSplatos() {
@@ -258,14 +243,37 @@ public class JIMeseros extends javax.swing.JInternalFrame {
         this.jSplatos = jSplatos;
     }
 
-    public JLabel getTxtID() {
-        return txtID;
+    public JTextField getTxtEMAIL1() {
+        return txtEMAIL1;
     }
 
-    public void setTxtID(JLabel txtID) {
-        this.txtID = txtID;
+    public void setTxtEMAIL1(JTextField txtEMAIL1) {
+        this.txtEMAIL1 = txtEMAIL1;
     }
 
+    public JTextField getTxtNombrepersona1() {
+        return txtNombrepersona1;
+    }
+
+    public void setTxtNombrepersona1(JTextField txtNombrepersona1) {
+        this.txtNombrepersona1 = txtNombrepersona1;
+    }
+
+    public JTextField getTxtcedula1() {
+        return txtcedula1;
+    }
+
+    public void setTxtcedula1(JTextField txtcedula1) {
+        this.txtcedula1 = txtcedula1;
+    }
+
+    public JTextField getTxttel() {
+        return txttel;
+    }
+
+    public void setTxttel(JTextField txttel) {
+        this.txttel = txttel;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablePedido;
@@ -282,9 +290,9 @@ public class JIMeseros extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel39;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSpinner jSplatos;
-    private javax.swing.JLabel txtID;
-    private javax.swing.JLabel txtNombrepersona;
-    private javax.swing.JLabel txtcedula;
-    private javax.swing.JLabel txttel;
+    private javax.swing.JTextField txtEMAIL1;
+    private javax.swing.JTextField txtNombrepersona1;
+    private javax.swing.JTextField txtcedula1;
+    private javax.swing.JTextField txttel;
     // End of variables declaration//GEN-END:variables
 }
