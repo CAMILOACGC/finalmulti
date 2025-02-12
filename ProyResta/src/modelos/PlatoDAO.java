@@ -9,6 +9,8 @@ package modelos;
  * @author Camilo
  */
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -52,8 +54,6 @@ public class platoDAO {
         }
         return plantilla;
     }
-
-
 
     public String insertar2() {
         try {
@@ -120,37 +120,37 @@ public class platoDAO {
         }
         return mensaje;
     }
-    public DefaultTableModel listarPlatos() {
-    DefaultTableModel modelo = new DefaultTableModel();
+
+    public List<PlatoP> listarTodo() {
+    List<PlatoP> lista = new ArrayList<>();
     Conexion conexion = new Conexion();
 
     try {
         conexion.conectar();
-        try (Statement consulta = conexion.getConexion().createStatement(); ResultSet datos = consulta.executeQuery("SELECT * FROM platos")) {
-            ResultSetMetaData metaDatos = datos.getMetaData();
-            
-            // Agregar las columnas al modelo de la tabla
-            for (int i = 1; i <= metaDatos.getColumnCount(); i++) {
-                modelo.addColumn(metaDatos.getColumnName(i));
-            }
+        Statement consulta = conexion.getConexion().createStatement();
+        ResultSet datos = consulta.executeQuery("SELECT * FROM platos");
 
-            // Agregar las filas al modelo
-            while (datos.next()) {
-                Object[] fila = new Object[metaDatos.getColumnCount()];
-                for (int i = 0; i < metaDatos.getColumnCount(); i++) {
-                    fila[i] = datos.getObject(i + 1);
-                }
-                modelo.addRow(fila);
-            }
-            
+        while (datos.next()) {
+            PlatoP p = new PlatoP();
+            p.setID(datos.getString("id"));
+            p.setNOM(datos.getString("nombre"));
+            p.setPREC(datos.getDouble("precio"));
+            p.setPRO(datos.getString("proteina"));
+            p.setCAN(datos.getString("cantidad_personas"));
+            p.setACOM(datos.getString("acompanamiento"));
+            p.setGASEOSA(datos.getString("bebida"));
+            lista.add(p);
         }
+
         conexion.getConexion().close();
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Error al listar los platos: " + ex.getMessage());
     }
 
-    return modelo;
+    return lista;
 }
+
+
 
 
     public PlatoP getObjPlato() {

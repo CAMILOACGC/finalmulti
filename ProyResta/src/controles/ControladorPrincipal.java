@@ -18,13 +18,11 @@ import modelos.*;
 public class ControladorPrincipal implements ActionListener {
 
     private MDIPrincipal principal;
-    private PlatoP plato;
-    private Cliente cliente;
+
 
     public ControladorPrincipal() {
         this.principal = new MDIPrincipal();
-        this.plato = new PlatoP();
-        this.cliente = new Cliente();
+        
 
         // Registra los botones en el menú
         this.principal.getBtnventas().addActionListener(this);
@@ -32,10 +30,10 @@ public class ControladorPrincipal implements ActionListener {
         this.principal.getMnmRepoteempleados().addActionListener(this);
         this.principal.getMnmiteadministrador().addActionListener(this);
         this.principal.getMnmitecajero().addActionListener(this);
-        this.principal.getMnmitemesero().addActionListener(this);
+        this.principal.getMnmRegistrarplato().addActionListener(this);
         this.principal.getMnmmostrarfactura().addActionListener(this);
     }
-
+ 
     public void iniciar() {
         principal.setTitle("Productos MDI");
         principal.setLocationRelativeTo(null);
@@ -69,7 +67,25 @@ public class ControladorPrincipal implements ActionListener {
             controlplato.iniciar();
         }
 
-        if (e.getSource().equals(principal.getMnmitemesero()) || e.getSource().equals(principal.getBtnventas())) {
+        if (e.getSource().equals(principal.getBtnventas())) {
+            System.out.println("Abriendo ventana de meseros..."); // Depuración
+
+            JIMeseros meseros = new JIMeseros();
+            principal.getPanelventanas().add(meseros);
+            meseros.setVisible(true);
+           controlmesero controlmese = new controlmesero();// Asegura que la ventana se muestre
+           controlmese.iniciar();
+        }
+         if (e.getSource().equals(principal.getMnmhacerpedido())) {
+            System.out.println("Abriendo ventana de meseros..."); // Depuración
+
+            JIMeseros meseros = new JIMeseros();
+            principal.getPanelventanas().add(meseros);
+            meseros.setVisible(true);
+           controlmesero controlmese = new controlmesero();// Asegura que la ventana se muestre
+           controlmese.iniciar();
+        }
+         if (e.getSource().equals(principal.getMnmhacerpedido()) || e.getSource().equals(principal.getBtnventas())) {
             System.out.println("Abriendo ventana de meseros..."); // Depuración
 
             JIMeseros meseros = new JIMeseros();
