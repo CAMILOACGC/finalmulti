@@ -76,5 +76,15 @@ public class ControladorPrincipal implements ActionListener {
             ControladorRegisPlato controlplato = new ControladorRegisPlato();
             controlplato.iniciar();
         }
+              if (e.getSource().equals(principal.getMnmRegistrarplato())) {
+            System.out.println("Abriendo ventana de plato."); // Depuración
+
+               JIRegisplato platos = new JIRegisplato();
+            principal.getPanelventanas().add(platos);
+            platos.setVisible(true); // Asegura que la ventana se muestre
+
+            ControladorRegisPlato controlplato = new ControladorRegisPlato();
+            controlplato.iniciar();
+        }
     }
 }

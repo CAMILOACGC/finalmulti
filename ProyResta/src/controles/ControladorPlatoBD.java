@@ -62,13 +62,14 @@ public class ControladorPlatoBD implements ActionListener {
         int fila = tabla.getSelectedRow();
         if(fila != -1) {
             PlatoP plato = new PlatoP(
+                   tabla.getValueAt(fila, 4).toString(),  // CAN
+                tabla.getValueAt(fila, 3).toString(),  // PRO
+                tabla.getValueAt(fila, 5).toString(),  // Acompañamiento
+                tabla.getValueAt(fila, 6).toString(),  // Bebida
                 tabla.getValueAt(fila, 0).toString(),  // ID
                 tabla.getValueAt(fila, 1).toString(),  // Nombre
-                Double.parseDouble(tabla.getValueAt(fila, 2).toString(),
-                tabla.getValueAt(fila, 3).toString(),  // Proteína
-                tabla.getValueAt(fila, 4).toString(),  // Cantidad de personas
-                tabla.getValueAt(fila, 5).toString(),  // Acompañamiento
-                tabla.getValueAt(fila, 6).toString()   // Bebida
+                    Double.parseDouble(tabla.getValueAt(fila, 2).toString()),   // Precio
+                1
             );
             platoDAO.setObjPlato(plato);
         } else {
